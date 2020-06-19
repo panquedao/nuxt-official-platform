@@ -1,0 +1,82 @@
+@qka-prefix: qka;
+
+// Background color for `<body>`
+@body-background: #fff;
+// Base background color for most components
+@component-background: #fff;
+@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+@font-size-base: 14px;
+
+// -------- Colors -----------
+@primary-color: #266ec0;
+
+// Disabled states
+@disabled-color: #e2e2e2;
+@disabled-bg: #e2e2e2;
+
+// vertical paddings
+@padding-lg: 24px; // containers
+@padding-md: 16px; // small containers and buttons
+@padding-sm: 12px; // Form controls and items
+@padding-xs: 8px; // small items
+
+// List
+@list-header-background: transparent;
+@list-footer-background: transparent;
+@list-empty-text-padding: @padding-md;
+@list-item-padding: @padding-sm 0;
+@list-item-meta-margin-bottom: @padding-md;
+@list-item-meta-avatar-margin-right: @padding-md;
+@list-item-meta-title-margin-bottom: @padding-sm;
+
+// ICONFONT
+@iconfont-css-prefix: qkaicon;
+
+@breadcrumb-base-color: #999;
+@breadcrumb-last-item-color: #999;
+@breadcrumb-font-size: 16px;
+@breadcrumb-icon-font-size: 13px;
+@breadcrumb-link-color: #999;
+@breadcrumb-link-color-hover: #fe5400;
+@breadcrumb-separator-color: #999;
+@breadcrumb-separator-margin: 0 8px;
+
+// Tag
+// @tag-default-bg: @background-color-light;
+// @tag-default-color: @text-color;
+// @tag-font-size: @font-size-sm;
+
+// Pagination
+// ---
+@pagination-item-size: 32px;
+@pagination-item-size-sm: 24px;
+@pagination-font-family: Arial;
+@pagination-font-weight-active: 500;
+@pagination-item-bg-active: @component-background;
+
+
+.reset-component() {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.5;
+    list-style: none;
+}
+
+// mixins for clearfix
+// ------------------------
+.clearfix() {
+    zoom: 1;
+    &::before,
+    &::after {
+      display: table;
+      content: '';
+    }
+    &::after {
+      clear: both;
+    }
+}

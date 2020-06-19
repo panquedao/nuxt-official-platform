@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: universalframework-nuxtofficialpaltform
+  namespace: webdev
+  labels:
+    k8s-app: universalframework-nuxtofficialpaltform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: universalframework-nuxtofficialpaltform
+  template:
+    metadata:
+      labels:
+        k8s-app: universalframework-nuxtofficialpaltform
+    spec:
+      containers:
+        - name: universalframework-nuxtofficialpaltform
+          image: harbor.qkagame.com/universalframework/fishgameofficialsite:latest
+          imagePullPolicy: Always
+          command: ["npm","run","start"]
+          ports:
+            - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: universalframework-nuxtofficialpaltform
+  name: universalframework-nuxtofficialpaltform
+  namespace: webdev
+spec:
+  selector:
+    k8s-app: universalframework-nuxtofficialpaltform
+  ports:
+    - port: 80
+      targetPort: 3000
